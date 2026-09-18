@@ -99,27 +99,35 @@ ChatResponse (Pydantic BaseModel)
 
 ## Installation
 
+### 1. Clone the repository
 ```bash
-# 1. Clone the repository
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/MZahidKamal/PH-AIML-B1-GenerativeAI-M2-Module11.git
+cd PH-AIML-B1-GenerativeAI-M2-Module11
+```
 
-# 2. Create and activate a virtual environment
+### 2. Create and activate a virtual environment
+```bash
 python -m venv venv
 source venv/bin/activate        # Windows: venv\Scripts\activate
+```
 
-# 3. Install dependencies
+### 3. Install dependencies
+```bash
 pip install -r requirements.txt
+```
 
-# 4. Set up environment variables
-# Copy .env.example to .env and fill in your credentials
+### 4. Set up environment variables
+- Copy .env.example to .env and fill in your credentials
+```bash
 cp .env.example .env
+```
 
-# Open .env and set the following values:
-# GROQ_CLOUD_API_KEY       → your Groq Cloud API key
-# GROQ_CLOUD_OPENAI_MODEL  → your Groq model name
+- Open .env and set the following values:
+- GROQ_CLOUD_API_KEY       → your Groq Cloud API key
+- GROQ_CLOUD_OPENAI_MODEL  → your Groq model name
 
-# 5. Run the app
+### 5. Run the app
+```bash
 streamlit run .\app.py
 ```
 
