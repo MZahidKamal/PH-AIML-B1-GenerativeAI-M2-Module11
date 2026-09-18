@@ -1,6 +1,7 @@
 from langchain_core.prompts import ChatPromptTemplate
 
 
+
 # ------------------------------------------------------------------
 # Category detection prompt
 # Used once at the start to classify the user's question
@@ -17,6 +18,7 @@ CATEGORY_DETECTION_PROMPT = ChatPromptTemplate.from_messages([
 ])
 
 
+
 # ------------------------------------------------------------------
 # Branch-specific answer prompts
 # Each branch gets a domain-expert persona
@@ -31,6 +33,7 @@ PROGRAMMING_PROMPT = ChatPromptTemplate.from_messages([
     ("human", "{question}"),
 ])
 
+
 MATH_PROMPT = ChatPromptTemplate.from_messages([
     (
         "system",
@@ -41,6 +44,7 @@ MATH_PROMPT = ChatPromptTemplate.from_messages([
     ("human", "{question}"),
 ])
 
+
 GENERAL_PROMPT = ChatPromptTemplate.from_messages([
     (
         "system",
@@ -49,6 +53,7 @@ GENERAL_PROMPT = ChatPromptTemplate.from_messages([
     ),
     ("human", "{question}"),
 ])
+
 
 
 # ------------------------------------------------------------------
@@ -64,6 +69,7 @@ SUMMARY_PROMPT = ChatPromptTemplate.from_messages([
     ("human", "{answer}"),
 ])
 
+
 KEYWORDS_PROMPT = ChatPromptTemplate.from_messages([
     (
         "system",
@@ -72,6 +78,7 @@ KEYWORDS_PROMPT = ChatPromptTemplate.from_messages([
     ),
     ("human", "{answer}"),
 ])
+
 
 FOLLOWUP_PROMPT = ChatPromptTemplate.from_messages([
     (

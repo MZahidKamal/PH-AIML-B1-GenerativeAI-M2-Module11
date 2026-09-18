@@ -2,6 +2,7 @@ from pydantic import BaseModel, Field
 from typing import List
 
 
+
 class ChatResponse(BaseModel):
     """Structured response schema for the chatbot."""
 

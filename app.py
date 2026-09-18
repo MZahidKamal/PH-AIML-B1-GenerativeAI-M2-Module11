@@ -1,6 +1,8 @@
 import streamlit as st
 from chatbot import get_response
 
+
+
 # ------------------------------------------------------------------
 # Page config
 # ------------------------------------------------------------------
@@ -9,6 +11,7 @@ st.set_page_config(
     page_icon="🤖",
     layout="centered",
 )
+
 
 
 # ------------------------------------------------------------------
@@ -35,6 +38,7 @@ def render_response(response):
             st.write(f"- {followup}")
 
 
+
 # ------------------------------------------------------------------
 # Page header
 # ------------------------------------------------------------------
@@ -42,12 +46,16 @@ st.title("🤖 LangChain Chatbot")
 st.caption("Powered by RunnableBranch · RunnableParallel · Pydantic Structured Output")
 st.divider()
 
+
+
 # ------------------------------------------------------------------
 # Session state — chat history
 # Each entry: {"role": "user"|"assistant", "content": str, "response": ChatResponse|None}
 # ------------------------------------------------------------------
 if "messages" not in st.session_state:
     st.session_state.messages = []
+
+
 
 # ------------------------------------------------------------------
 # Render existing chat history
@@ -58,6 +66,8 @@ for entry in st.session_state.messages:
             st.markdown(entry["content"])
         else:
             render_response(entry["response"])
+
+
 
 # ------------------------------------------------------------------
 # Chat input — at the bottom

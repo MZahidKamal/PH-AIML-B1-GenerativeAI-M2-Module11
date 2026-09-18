@@ -15,7 +15,10 @@ from prompts import (
 )
 from schemas import ChatResponse
 
+
+
 load_dotenv()
+
 
 
 # ------------------------------------------------------------------
@@ -29,6 +32,7 @@ def build_llm() -> ChatGroq:
     )
 
 
+
 # ------------------------------------------------------------------
 # Step 1 — detect category
 # Returns "programming", "math", or "general"
@@ -40,6 +44,7 @@ def detect_category(question: str, llm: ChatGroq) -> str:
     if raw not in {"programming", "math", "general"}:
         return "general"
     return raw
+
 
 
 # ------------------------------------------------------------------
@@ -60,6 +65,7 @@ def build_answer_branch(llm: ChatGroq):
     return branch
 
 
+
 # ------------------------------------------------------------------
 # Step 3 — RunnableParallel: generate summary, keywords, follow-ups
 # All three run simultaneously on the answer text
@@ -73,6 +79,7 @@ def build_parallel_enrichment(llm: ChatGroq):
         follow_up = FOLLOWUP_PROMPT  | llm | string_parser,
     )
     return parallel
+
 
 
 # ------------------------------------------------------------------
